@@ -1,0 +1,127 @@
+---
+title: Core Features of Thegg Lord
+description: Explore the essential tools and capabilities in Thegg Lord for effective documentation management and collaboration.
+---
+
+## Overview
+
+Thegg Lord provides powerful features to streamline your documentation workflow. You create, organize, collaborate, track changes, and export content effortlessly. These tools help teams maintain up-to-date docs without complexity.
+
+<Columns cols={3}>
+  <Card title="Page Creation & Editing" icon="edit-3" href="#creating-pages">
+    Build rich MDX pages with real-time previews.
+  </Card>
+  <Card title="Organization" icon="folder" href="#organizing-docs">
+    Use folders and tags for intuitive navigation.
+  </Card>
+  <Card title="Collaboration" icon="users" href="#collaboration">
+    Enable team editing and reviews.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-control">
+    Track history and revert changes.
+  </Card>
+  <Card title="Search & Export" icon="search" href="#search-export">
+    Find content fast and export to multiple formats.
+  </Card>
+</Columns>
+
+## Creating and Editing Documentation Pages
+
+Start building pages directly in Thegg Lord. You access the editor from the dashboard and use MDX syntax for components like `<Callout>` and code blocks.
+
+<Steps>
+  <Step title="Create New Page" icon="plus">
+    Click **New Page** in the sidebar. Enter a title and select a folder.
+  </Step>
+  <Step title="Edit Content" icon="edit">
+    Use the WYSIWYG editor or switch to Markdown mode. Add components with autocomplete.
+  </Step>
+  <Step title="Preview and Publish" icon="eye">
+    Preview changes live, then click **Publish** to make it live.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable real-time collaboration during editing for instant team feedback.
+</Callout>
+
+## Organizing Docs with Folders and Tags
+
+Structure your documentation hierarchically. Folders create nested navigation, while tags enable cross-project filtering.
+
+<Tabs>
+  <Tab title="Folders" icon="folder">
+    Create folders via drag-and-drop. Nest up to 5 levels deep.
+
+    ```
+    docs/
+    ├── quickstart/
+    │   └── index.mdx
+    └── api/
+        └── endpoints.mdx
+    ```
+  </Tab>
+  <Tab title="Tags" icon="tag">
+    Assign tags like `feature` or `api` during page creation. Filter sidebar by tags.
+
+    ```javascript
+    // Example tag metadata in frontmatter
+    ---
+    tags: ["feature", "api"]
+    ---
+    ```
+  </Tab>
+</Tabs>
+
+## Collaboration Tools for Teams
+
+Invite team members with role-based access: viewer, editor, admin. You review changes via inline comments and approve merges.
+
+Use `@mentions` in comments to notify teammates. Share read-only links for external stakeholders.
+
+<CodeGroup tabs="Invite,Share">
+  ```javascript
+  // API to invite user (via dashboard or CLI)
+  await fetch('https://api.example.com/v1/teams/invite', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${YOUR_TOKEN}` },
+    body: JSON.stringify({ email: 'user@example.com', role: 'editor' })
+  });
+  ```
+  ```bash
+  # CLI command for sharing
+  thegglord share /docs/page --public --expires 30d
+  ```
+</CodeGroup>
+
+## Version Control and History Tracking
+
+Thegg Lord integrates Git-like version control. View full history, compare diffs, and revert to any commit.
+
+<Expandable title="Advanced Version Features" default-open="false">
+
+  Access history via page settings. Cherry-pick changes or branch for experiments.
+
+  ```mermaid
+  graph TD
+      A[Initial Draft] --> B[Team Review]
+      B --> C[Publish v1.0]
+      C --> D[Update v1.1]
+      D --> E[Revert Option]
+  ```
+
+</Expandable>
+
+## Search and Export Functionalities
+
+Search across all docs with fuzzy matching. Export pages or sites to PDF, HTML, or Markdown.
+
+| Feature     | Description                          | Formats Supported      |
+|-------------|--------------------------------------|------------------------|
+| Global Search | Instant results with highlights     | N/A                    |
+| Page Export | Single page download                | PDF, MD, HTML          |
+| Site Export | Full site archive                   | ZIP (MDX + assets)     |
+
+<Callout kind="info">
+  Exports preserve components and interactive elements where possible.
+</Callout>

@@ -1,0 +1,172 @@
+---
+title: Integrations and Extensions
+description: Connect Thegg Lord with third-party tools to enhance your documentation workflow and automate processes.
+---
+
+## Overview
+
+Connect Thegg Lord to popular third-party services like GitHub and Slack to streamline your documentation workflow. Use webhooks for real-time notifications, leverage the API for custom extensions, and embed external content seamlessly. These integrations help you automate updates, sync content, and extend functionality without leaving your docs.
+
+<Callout kind="info">
+  All integrations use secure HTTPS connections and support OAuth 2.0 where applicable.
+</Callout>
+
+## Supported Integrations
+
+Discover ready-to-use integrations that supercharge your documentation.
+
+<Columns cols={3}>
+  <Card title="GitHub" icon="github" href="https://github.com">
+    Sync repositories, auto-update docs from commits, and trigger builds on page changes.
+  </Card>
+  <Card title="Slack" icon="message-circle" href="https://slack.com">
+    Send notifications for doc updates, comments, and approvals directly to your channels.
+  </Card>
+  <Card title="Zapier" icon="zap" href="https://zapier.com">
+    Connect to 5000+ apps for no-code automations like doc exports to Google Drive.
+  </Card>
+</Columns>
+
+## Setting Up Webhooks
+
+Webhooks notify external services about events like page updates or new comments. Follow these steps to configure them.
+
+<Steps>
+  <Step title="Navigate to Settings" icon="settings">
+    Go to your project dashboard at `https://dashboard.example.com/projects/{projectId}/settings/webhooks`.
+  </Step>
+  <Step title="Add Webhook URL" icon="plus">
+    Enter your endpoint URL, e.g., `https://your-webhook-url.com/thegglord`.
+  </Step>
+  <Step title="Select Events" icon="list">
+    Choose events like `page.updated` or `comment.created`.
+  </Step>
+  <Step title="Test and Save" icon="check-circle">
+    Send a test payload and save the webhook.
+  </Step>
+</Steps>
+
+Here is a sample webhook payload:
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  {
+    "event": "page.updated",
+    "projectId": "proj_123abc",
+    "pageId": "page_xyz789",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "user": {
+      "id": "user_456def",
+      "email": "user@example.com"
+    }
+  }
+  ```
+  ```python
+  {
+    "event": "page.updated",
+    "projectId": "proj_123abc",
+    "pageId": "page_xyz789",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "user": {
+      "id": "user_456def",
+      "email": "user@example.com"
+    }
+  }
+  ```
+</CodeGroup>
+
+## API Access for Custom Extensions
+
+Build custom integrations using the REST API at `https://api.example.com/v1`.
+
+<ParamField path="projectId" param-type="string" required="true">
+  Your project identifier.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer `{YOUR_API_KEY}`.
+</ParamField>
+
+Send a request to list integrations:
+
+<Request tabs="cURL,JavaScript">
+  ```bash
+  curl -X GET https://api.example.com/v1/projects/{projectId}/integrations \
+    -H "Authorization: Bearer YOUR_API_KEY"
+  ```
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/projects/{projectId}/integrations', {
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY'
+    }
+  });
+  const data = await response.json();
+  ```
+</Request>
+
+<Response tabs="200">
+  ```json
+  {
+    "integrations": [
+      {
+        "id": "int_001",
+        "type": "github",
+        "enabled": true,
+        "config": {}
+      }
+    ]
+  }
+  ```
+</Response>
+
+## Embedding External Content
+
+Embed content from external sources using iframes or oEmbed.
+
+<Tabs>
+  <Tab title="GitHub Gist" icon="code">
+    Use the embed code:
+
+    ````html
+    <script src="https://gist.github.com/user/abc123.js"></script>
+    ````
+
+    Paste it into your MDX page source.
+  </Tab>
+  <Tab title="YouTube Video" icon="video">
+    Add a Video component:
+
+    ```jsx
+    <Video src="https://youtube.com/embed/dQw4w9WgXcQ" title="Demo" width="560" height="315" />
+    ```
+
+    Replace with your video ID.
+  </Tab>
+</Tabs>
+
+## Best Practices for Secure Connections
+
+Follow these guidelines to keep integrations safe.
+
+<Expandable title="Security Checklist" default-open="true">
+  - Rotate API keys regularly via dashboard.
+  - Use HTTPS-only endpoints for webhooks.
+  - Validate payloads with HMAC signatures.
+  - Limit scopes in OAuth apps to read-only where possible.
+  - Monitor webhook delivery logs for failures.
+</Expandable>
+
+<Callout kind="alert">
+  Never expose `YOUR_API_KEY` in client-side code or public repositories.
+</Callout>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="API Reference" icon="book-open" href="/authentication">
+    Dive into full API docs.
+  </Card>
+  <Card title="Troubleshooting" icon="help-circle" href="/quickstart">
+    Common integration issues.
+  </Card>
+</Columns>

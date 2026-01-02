@@ -1,0 +1,113 @@
+---
+title: Introduction to Thegg Lord
+description: Discover Thegg Lord, a comprehensive documentation platform designed to help you organize and manage all your project documentation effortlessly.
+---
+
+## Overview
+
+Thegg Lord empowers you to create, organize, and collaborate on project documentation with ease. You get a centralized space to build knowledge bases, wikis, and guides that scale with your team. Say goodbye to scattered notes and hello to structured, searchable docs that boost productivity.
+
+## Key Features
+
+Dive into the core capabilities that make Thegg Lord your go-to documentation solution.
+
+<Columns cols={3}>
+  <Card title="Organized Spaces" icon="layers" href="/spaces">
+    Create unlimited documentation spaces for projects, teams, or products. Keep everything structured and accessible.
+  </Card>
+  <Card title="Real-time Collaboration" icon="users" href="/collaboration">
+    Invite team members, edit simultaneously, and track changes with version history.
+  </Card>
+  <Card title="Rich Editing" icon="edit-3" href="/editor">
+    Use markdown, embeds, diagrams, and custom components for professional-looking docs.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running in minutes with these essential steps.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit `https://thegglord.com` and create your free account. No credit card required.
+  </Step>
+  <Step title="Create a Space" icon="plus">
+    Click "New Space" from the dashboard and name it for your project.
+  </Step>
+  <Step title="Add Your First Doc" icon="file-plus">
+    Start a new page with markdown or import from GitHub.
+  </Step>
+  <Step title="Share and Collaborate" icon="share-2">
+    Invite teammates via email and set permissions.
+  </Step>
+</Steps>
+
+## Quick Navigation
+
+Jump to the sections you need most.
+
+<Columns cols={2}>
+  <Card title="Get Started" icon="zap" href="/quickstart">
+    Follow the full quickstart guide.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs with API keys and OAuth.
+  </Card>
+  <Card title="Customization" icon="settings" href="/configuration">
+    Tailor spaces to your workflow.
+  </Card>
+  <Card title="Changelog" icon="git-branch" href="/changelog">
+    Stay updated with new releases.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Pro tip: Customize your space's theme using the brand color `{`#3B82F6`}` for a consistent look.
+</Callout>
+
+## Why Choose Thegg Lord
+
+You choose Thegg Lord because it combines simplicity with power. Unlike static sites, you get live collaboration without setup. Search across all spaces instantly, embed interactive components, and export to PDF or Markdown. Teams report 40% faster onboarding thanks to intuitive organization.
+
+## Brand Guidelines
+
+Maintain consistency with Thegg Lord's primary brand color `{`#3B82F6`}` (blue). Use it for headers, buttons, and accents.
+
+<Tabs>
+  <Tab title="CSS Usage" icon="code">
+    Apply the brand color in your custom themes.
+
+    ```css
+    :root {
+      --brand-color: #3B82F6;
+    }
+
+    .header {
+      background-color: var(--brand-color);
+      color: white;
+    }
+    ```
+  </Tab>
+  <Tab title="Embed Example" icon="link">
+    Embed docs with your branding.
+
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      const embed = document.createElement('iframe');
+      embed.src = 'https://docs.thegglord.com/embed/your-space';
+      embed.style.borderColor = '#3B82F6';
+      document.body.appendChild(embed);
+      ```
+
+      ```python
+      import webbrowser
+      webbrowser.open('https://docs.thegglord.com/embed/your-space')
+      # Style with CSS: border-color: #3B82F6;
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Integrate via API at `https://api.example.com/docs/v1` using your `{API_KEY}`. Check `/authentication` for setup.
+</Callout>

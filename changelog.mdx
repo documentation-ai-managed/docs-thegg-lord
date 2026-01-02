@@ -1,0 +1,126 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and bug fixes in Thegg Lord to stay informed about new features.
+---
+
+## Recent Updates
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added real-time collaboration, allowing multiple users to edit documents simultaneously with live cursors and conflict resolution.
+- Introduced advanced search with full-text indexing and filters for tags, authors, and dates.
+- New export options including PDF with custom branding and Markdown bundles.
+
+## Improvements
+
+- Enhanced performance of the document editor by optimizing rendering for large pages (`<50ms` load times).
+- Updated UI with brand color `#3B82F6` accents for better visual consistency.
+
+## Bug Fixes
+
+- Fixed synchronization issues in shared workspaces that caused outdated content displays.
+- Resolved export errors for documents containing embedded images or `{code blocks}`.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Dark mode support with automatic detection based on system preferences.
+- Integrated version history with diff views and one-click restores.
+
+## Improvements
+
+- Streamlined onboarding flow, reducing setup time by 40%.
+- Added keyboard shortcuts for common actions like `<kbd>Ctrl</kbd>+<kbd>S</kbd>` to save.
+
+## Bug Fixes
+
+- Corrected rendering glitches in Mermaid diagrams on mobile devices.
+- Patched authentication token refresh to prevent logout loops.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## Initial Release
+
+- Core documentation editor with rich text, MDX support, and live preview.
+- Workspace organization with folders, tags, and permissions.
+- Basic API for programmatic document management.
+
+## Breaking Changes
+
+- Initial schema update requires re-importing legacy documents.
+
+</Update>
+
+## Upgrade Process
+
+Stay current by following these steps in your dashboard.
+
+<Steps>
+  <Step title="Check Current Version" icon="info">
+    Navigate to **Settings {arrow-right} About** to view your installed version.
+  </Step>
+  <Step title="Review Changes" icon="book-open">
+    Scan this changelog for breaking changes relevant to your workflows.
+  </Step>
+  <Step title="Apply Update" icon="download">
+    Click **Update Now** in the dashboard. Backups are automatic.
+  </Step>
+  <Step title="Verify" icon="check-circle">
+    Test key features like collaboration and search after updating.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable auto-updates in **Settings {arrow-right} Notifications** to receive new versions seamlessly.
+</Callout>
+
+## Upcoming Roadmap
+
+Explore what's next for Thegg Lord.
+
+<Columns cols={2}>
+  <Card title="Q4 2024" icon="zap" horizontal>
+    AI-powered content suggestions and auto-summaries.
+  </Card>
+  <Card title="Q1 2025" icon="shield" horizontal>
+    Advanced security with SOC 2 compliance and granular permissions.
+  </Card>
+  <Card title="Integrations" icon="plug" horizontal>
+    Native support for GitHub, Slack, and Notion imports.
+  </Card>
+  <Card title="Performance" icon="trending-up" horizontal>
+    Edge caching for global `<100ms` access.
+  </Card>
+</Columns>
+
+## Version Comparison
+
+Quickly compare key capabilities across releases.
+
+<Tabs>
+  <Tab title="v1.2.0" icon="star">
+    | Feature          | Status   |
+    |------------------|----------|
+    | Real-time collab | ✅ Added |
+    | Dark mode        | ✅ Added |
+    | AI search        | ✅ Added |
+  </Tab>
+  <Tab title="v1.1.0" icon="package">
+    | Feature          | Status   |
+    |------------------|----------|
+    | Version history  | ✅ Added |
+    | Dark mode        | ✅ Added |
+    | MDX support      | ✅ Base  |
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Report issues or request features via the [feedback form](https://dashboard.example.com/feedback).
+</Callout>
